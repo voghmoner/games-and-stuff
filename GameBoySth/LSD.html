@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="Stylesheet" type="text/css" href="gameBoy.css">
+	<script type="text/javascript" src="LSD.js">
+	</script>
+</head>
+<body>
+<canvas id="canv" width="640" height="360"></canvas>
+<script type="text/javascript">
+var canvas = document.getElementById('canv')
+var ctx = canvas.getContext('2d')
+
+var width
+var height
+
+
+function resize(){
+	canvas.width = width = canvas.offsetWidth
+	canvas.height = height = canvas.offsetHeight
+}
+resize()
+document.defaultView.addEventListener('resize', resize)
+
+var lastTime = 0
+function draw(timestamp){
+	// ctx.fillStyle = "rgb(90, 60, 90)"
+	// ctx.fillRect(0, 0, width, height)
+	// ctx.fillStyle = "rgb(255, 255, 255)"
+	// ctx.fillRect(0, 0, 200, 200)
+	delta_t = Math.min(1000, timestamp - lastTime)
+	game.update(delta_t)
+	lastTime = timestamp
+	requestAnimationFrame(draw)
+}
+draw(0)
+</script>
+</body>
+</html>
