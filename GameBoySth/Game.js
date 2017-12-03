@@ -10,13 +10,13 @@ function Game(){
 	this.timeSum = 0
 	this.over = false
 	this.figureColors = [
-		'#CC00CC', 
-		'#CCE5FF',
-		'#7F00FF',
-		'#FFFF00',
-		'#FF9933',
-		'#FF8000',
-		'#009900'
+		'#305899', 
+		'#57427a',
+		'#8c1a1a',
+		'#ba6114',
+		'#c4b61d',
+		'#89ad3c',
+		'#328f91'
 	]
 	this.gunX = Math.floor(this.numX / 2)
 	this.gunColor = '#FFFFFF'
